@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hybrid Athlete Plan — Transform Like Virat Kohli</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --bg2: #111114;
+    --bg3: #18181d;
+    --bg4: #1e1e26;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0ede8;
+    --text2: #9a968f;
+    --text3: #5c5957;
+    --accent: #e8c547;
+    --accent2: #c9a82a;
+    --accent-dim: rgba(232,197,71,0.12);
+    --accent-glow: rgba(232,197,71,0.06);
+    --red: #e85447;
+    --green: #47e8a0;
+    --blue: #4787e8;
+    --purple: #a047e8;
+    --green-dim: rgba(71,232,160,0.1);
+    --blue-dim: rgba(71,135,232,0.1);
+    --red-dim: rgba(232,84,71,0.1);
+    --purple-dim: rgba(160,71,232,0.1);
+    --radius: 12px;
+    --radius-lg: 18px;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vw, 5rem);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(232,197,71,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(71,135,232,0.06) 0%, transparent 50%),
+      linear-gradient(160deg, #0a0a0b 40%, #12100a 100%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 80px);
+  }
+
+  .hero-number {
+    position: absolute;
+    top: -0.1em;
+    right: clamp(1.5rem, 5vw, 5rem);
+    font-family: var(--font-display);
+    font-size: clamp(18rem, 30vw, 32rem);
+    color: rgba(255,255,255,0.018);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,197,71,0.25);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    position: relative;
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  .hero h1 span {
+    color: var(--accent);
+    display: block;
+  }
+
+  .hero-sub {
+    position: relative;
+    margin-top: 1.5rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: var(--text2);
+    max-width: 520px;
+    line-height: 1.7;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-stats {
+    position: relative;
+    display: flex;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-stat-val {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .hero-stat-val span {
+    color: var(--accent);
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    right: clamp(1.5rem, 5vw, 5rem);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--border2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: translateX(-100%);
+    animation: scanline 2s ease infinite;
+  }
+
+  @keyframes scanline {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MAIN LAYOUT */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 2rem);
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text);
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* TAB NAVIGATION */
+  .tabs-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,11,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 clamp(1.5rem, 5vw, 2rem);
+    margin: 0 calc(-1 * clamp(1.5rem, 5vw, 2rem)) 3rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text3);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+
+  .tab.active { color: var(--accent); }
+  .tab.active::after { transform: scaleX(1); }
+  .tab:hover:not(.active) { color: var(--text2); }
+
+  /* TAB PANELS */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* OVERVIEW CARDS */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .overview-card {
+    background: var(--bg2);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+
+  .overview-card:hover { background: var(--bg3); }
+
+  .ov-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .ov-label {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .ov-sub {
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  /* DAY CARDS */
+  .day-cards { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 3rem; }
+
+  .day-card { background: var(--bg2); overflow: hidden; }
+
+  .day-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+  }
+
+  .day-header:hover { background: var(--bg3); }
+
+  .day-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--text3);
+    line-height: 1;
+    width: 2ch;
+    transition: color 0.2s;
+  }
+
+  .day-card.open .day-num { color: var(--accent); }
+
+  .day-info { display: flex; flex-direction: column; gap: 3px; }
+
+  .day-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .day-focus {
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  .day-badge {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge-power { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(232,197,71,0.2); }
+  .badge-push { background: var(--red-dim); color: var(--red); border: 1px solid rgba(232,84,71,0.2); }
+  .badge-pull { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(71,135,232,0.2); }
+  .badge-recovery { background: var(--green-dim); color: var(--green); border: 1px solid rgba(71,232,160,0.2); }
+  .badge-full { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(160,71,232,0.2); }
+  .badge-hypertrophy { background: var(--red-dim); color: var(--red); border: 1px solid rgba(232,84,71,0.2); }
+  .badge-rest { background: rgba(255,255,255,0.04); color: var(--text3); border: 1px solid var(--border); }
+
+  .day-duration {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+
+  .day-chevron {
+    color: var(--text3);
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .day-card.open .day-chevron { transform: rotate(180deg); color: var(--accent); }
+
+  .day-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .day-card.open .day-body { display: block; }
+
+  /* WORKOUT SECTIONS */
+  .workout-section { margin-top: 1.5rem; }
+
+  .ws-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-family: var(--font-mono);
+    margin-bottom: 0.75rem;
+  }
+
+  .ws-label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--text3);
+  }
+
+  /* EXERCISE TABLE */
+  .ex-table { width: 100%; border-collapse: collapse; }
+
+  .ex-table thead th {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .ex-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.15s;
+  }
+
+  .ex-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+  .ex-table tbody tr:last-child { border-bottom: none; }
+
+  .ex-table td {
+    padding: 11px 12px;
+    font-size: 13.5px;
+    color: var(--text2);
+    vertical-align: top;
+  }
+
+  .ex-table td:first-child {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 180px;
+  }
+
+  .ex-sets {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .ex-rest {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+
+  /* CARDIO BLOCK */
+  .cardio-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cardio-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+
+  .cardio-item::before {
+    content: '—';
+    color: var(--text3);
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 12px;
+  }
+
+  /* INFO / TIP BOX */
+  .tip-box {
+    background: linear-gradient(135deg, rgba(232,197,71,0.06), rgba(232,197,71,0.03));
+    border: 1px solid rgba(232,197,71,0.18);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  .tip-box strong { color: var(--accent); font-weight: 500; }
+
+  .warn-box {
+    background: rgba(232,84,71,0.06);
+    border: 1px solid rgba(232,84,71,0.18);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  .warn-box strong { color: var(--red); font-weight: 500; }
+
+  /* PHASE SECTION */
+  .phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+
+  .phase-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .phase-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+
+  .phase-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .phase-1::before { background: linear-gradient(90deg, var(--blue), transparent); }
+  .phase-2::before { background: linear-gradient(90deg, var(--green), transparent); }
+  .phase-3::before { background: linear-gradient(90deg, var(--accent), transparent); }
+
+  .phase-num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .phase-1 .phase-num { color: rgba(71,135,232,0.3); }
+  .phase-2 .phase-num { color: rgba(71,232,160,0.3); }
+  .phase-3 .phase-num { color: rgba(232,197,71,0.3); }
+
+  .phase-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .phase-weeks {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.06em;
+  }
+
+  .phase-items { display: flex; flex-direction: column; gap: 8px; }
+
+  .phase-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+
+  .phase-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .phase-1 .phase-dot { background: var(--blue); }
+  .phase-2 .phase-dot { background: var(--green); }
+  .phase-3 .phase-dot { background: var(--accent); }
+
+  .phase-target {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .phase-target-label {
+    font-size: 10px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+    margin-bottom: 6px;
+  }
+
+  .phase-target-val {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--text);
+    letter-spacing: 0.04em;
+  }
+
+  /* NUTRITION */
+  .nutr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+
+  .nutr-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+  }
+
+  .nutr-card:hover { border-color: var(--border2); }
+
+  .nutr-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .nutr-label {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .nutr-val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .nutr-items { display: flex; flex-direction: column; gap: 4px; }
+
+  .nutr-item {
+    font-size: 12.5px;
+    color: var(--text2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nutr-item::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text3);
+    flex-shrink: 0;
+  }
+
+  .meal-timeline { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; }
+
+  .meal-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg2);
+    transition: background 0.15s;
+  }
+
+  .meal-row:hover { background: var(--bg3); }
+
+  .meal-time {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  .meal-desc { font-size: 13.5px; color: var(--text2); line-height: 1.5; }
+  .meal-desc strong { color: var(--text); font-weight: 500; }
+
+  .meal-kcal {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+
+  /* SUPPLEMENT TABLE */
+  .supp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; }
+
+  .supp-card {
+    background: var(--bg2);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: background 0.15s;
+  }
+
+  .supp-card:hover { background: var(--bg3); }
+
+  .supp-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .supp-dose {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+  }
+
+  .supp-timing {
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  .supp-why {
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* LIFESTYLE */
+  .lifestyle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+
+  .lifestyle-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ls-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+
+  .ls-items { display: flex; flex-direction: column; gap: 8px; }
+
+  .ls-item {
+    font-size: 13px;
+    color: var(--text2);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .ls-bullet {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* PRINCIPLE CARDS */
+  .principles { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1px; background: var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 3rem; }
+
+  .principle {
+    background: var(--bg2);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .principle::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .principle:hover { background: var(--bg3); }
+  .principle:hover::after { transform: scaleX(1); }
+
+  .principle-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .principle-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .principle-desc {
+    font-size: 12.5px;
+    color: var(--text3);
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 2rem);
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-sub {
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .day-header { grid-template-columns: auto 1fr auto; }
+    .day-badge { display: none; }
+    .meal-row { grid-template-columns: 70px 1fr; }
+    .meal-kcal { display: none; }
+    .ex-table td:nth-child(4) { display: none; }
+    .ex-table th:nth-child(4) { display: none; }
+    .hero-divider { display: none; }
+  }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-number">VK</div>
+  <div class="hero-tag">24-Week Transformation</div>
+  <h1>HYBRID<span>ATHLETE</span></h1>
+  <p class="hero-sub">A complete 6-day hybrid training system designed to transform your bodybuilder physique into an athlete's body — lean, powerful, and built to perform. Inspired by Virat Kohli's training philosophy.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val">80<span>kg</span></div>
+      <div class="hero-stat-label">Starting weight</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">72<span>–74</span></div>
+      <div class="hero-stat-label">Target kg</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">10<span>–13%</span></div>
+      <div class="hero-stat-label">Target body fat</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">24<span>wk</span></div>
+      <div class="hero-stat-label">Full plan</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- NAVIGATION TABS -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('schedule')">Weekly Schedule</button>
+    <button class="tab" onclick="showTab('phases')">Phase Plan</button>
+    <button class="tab" onclick="showTab('nutrition')">Nutrition</button>
+    <button class="tab" onclick="showTab('supplements')">Supplements</button>
+    <button class="tab" onclick="showTab('lifestyle')">Lifestyle & Recovery</button>
+    <button class="tab" onclick="showTab('principles')">Mindset</button>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- OVERVIEW STATS -->
+  <div class="overview-grid fade-in">
+    <div class="overview-card">
+      <div class="ov-num">6</div>
+      <div class="ov-label">Training Days</div>
+      <div class="ov-sub">1 active recovery day</div>
+    </div>
+    <div class="overview-card">
+      <div class="ov-num">2</div>
+      <div class="ov-label">HIIT Sessions / Week</div>
+      <div class="ov-sub">Sprint + circuit finishers</div>
+    </div>
+    <div class="overview-card">
+      <div class="ov-num">3</div>
+      <div class="ov-num" style="font-size:1.2rem; color:var(--text3); margin-top:-12px;">phases</div>
+      <div class="ov-label">Periodized Plan</div>
+      <div class="ov-sub">8 weeks each phase</div>
+    </div>
+    <div class="overview-card">
+      <div class="ov-num">176<span style="font-size:1.5rem;">g</span></div>
+      <div class="ov-label">Daily Protein</div>
+      <div class="ov-sub">2.2g/kg body weight</div>
+    </div>
+  </div>
+
+  <!-- ===== SCHEDULE TAB ===== -->
+  <div id="tab-schedule" class="tab-panel active">
+    <div class="section-header fade-in">
+      <span class="section-label">01</span>
+      <h2 class="section-title">WEEKLY SCHEDULE</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="day-cards fade-in">
+
+      <!-- DAY 1 -->
+      <div class="day-card open" id="card-d1">
+        <div class="day-header" onclick="toggleCard('d1')">
+          <div class="day-num">01</div>
+          <div class="day-info">
+            <div class="day-name">MONDAY</div>
+            <div class="day-focus">Lower Body Power + Sprint Conditioning</div>
+          </div>
+          <span class="day-badge badge-power">Power</span>
+          <span class="day-duration">75–80 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Warm-Up — 10 min</div>
+            <div class="cardio-block">
+              <div class="cardio-item">5 min light jog or jump rope</div>
+              <div class="cardio-item">Hip circles — 10 reps each side</div>
+              <div class="cardio-item">Glute bridges — 15 reps</div>
+              <div class="cardio-item">Bodyweight squats — 15 reps</div>
+              <div class="cardio-item">Leg swings front/back + lateral — 10 each</div>
+              <div class="cardio-item">Ankle mobilization — 30 sec each foot</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Strength Block — Compound Movements</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Barbell Back Squat</td><td class="ex-sets">4 × 5</td><td class="ex-rest">2.5 min</td><td>Heavy. Control down 3 sec, explode up. No bouncing.</td></tr>
+                <tr><td>Romanian Deadlift (RDL)</td><td class="ex-sets">3 × 8</td><td class="ex-rest">90 sec</td><td>Feel hamstring stretch. Keep bar close to legs.</td></tr>
+                <tr><td>Bulgarian Split Squat</td><td class="ex-sets">3 × 10 each</td><td class="ex-rest">90 sec</td><td>Rear foot elevated. Knee tracks toe. Deep range.</td></tr>
+                <tr><td>Leg Press (narrow stance)</td><td class="ex-sets">3 × 12</td><td class="ex-rest">75 sec</td><td>Full depth. No lockout at top.</td></tr>
+                <tr><td>Nordic Hamstring Curl</td><td class="ex-sets">3 × 6</td><td class="ex-rest">90 sec</td><td>Injury prevention. Slow eccentric. Use partner or machine.</td></tr>
+                <tr><td>Calf Raises (standing)</td><td class="ex-sets">4 × 15</td><td class="ex-rest">45 sec</td><td>Full range. Pause 1 sec at top.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Power / Athletic Block</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Box Jumps</td><td class="ex-sets">4 × 5</td><td class="ex-rest">90 sec</td><td>Step down, never jump down. Land softly.</td></tr>
+                <tr><td>Jump Squats (bodyweight)</td><td class="ex-sets">3 × 8</td><td class="ex-rest">60 sec</td><td>Quarter squat, max height. Athletic explosiveness.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Sprint Conditioning Finisher — 15 min</div>
+            <div class="cardio-block">
+              <div class="cardio-item">8 × 30 sec sprint / 90 sec walk (treadmill or track)</div>
+              <div class="cardio-item">Keep sprint intensity at 85–90% max effort</div>
+              <div class="cardio-item">Depleted legs + sprints = body burns fat for fuel</div>
+            </div>
+            <div class="tip-box"><strong>Key principle:</strong> Sprint intervals after lower body = double fat burn trigger. Glycogen-depleted legs force the body to target fat during sprints. This is how athletes stay lean without sacrificing muscle.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card" id="card-d2">
+        <div class="day-header" onclick="toggleCard('d2')">
+          <div class="day-num">02</div>
+          <div class="day-info">
+            <div class="day-name">TUESDAY</div>
+            <div class="day-focus">Push — Chest, Shoulders, Triceps + Core</div>
+          </div>
+          <span class="day-badge badge-push">Push</span>
+          <span class="day-duration">70 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Warm-Up — 8 min</div>
+            <div class="cardio-block">
+              <div class="cardio-item">Band pull-aparts — 3 × 15</div>
+              <div class="cardio-item">Shoulder circles — 30 sec</div>
+              <div class="cardio-item">Push-up to downward dog — 10 reps</div>
+              <div class="cardio-item">Arm crossovers — 20 reps</div>
+              <div class="cardio-item">Cable or band external rotation — 15 reps each side</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Strength Block</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Flat Barbell Bench Press</td><td class="ex-sets">4 × 6</td><td class="ex-rest">2 min</td><td>Full range. Chest touches bar. Elbows at 45°, not fully flared.</td></tr>
+                <tr><td>Overhead Press (barbell/DB)</td><td class="ex-sets">4 × 8</td><td class="ex-rest">90 sec</td><td>Athlete's best upper body movement. Core braced throughout.</td></tr>
+                <tr><td>Incline Dumbbell Press</td><td class="ex-sets">3 × 10</td><td class="ex-rest">75 sec</td><td>30–45° incline. More athletic chest shape than flat-only work.</td></tr>
+                <tr><td>Lateral Raises (cable or DB)</td><td class="ex-sets">4 × 15</td><td class="ex-rest">45 sec</td><td>Control the negative. No swinging. Builds capped shoulder look.</td></tr>
+                <tr><td>Close-Grip Bench Press</td><td class="ex-sets">3 × 10</td><td class="ex-rest">75 sec</td><td>Tricep focus. Elbows tucked at 45°.</td></tr>
+                <tr><td>Face Pulls (cable)</td><td class="ex-sets">3 × 15</td><td class="ex-rest">45 sec</td><td>Essential for shoulder health and posture. Pull to forehead level.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Core Circuit — 3 rounds (no rest between exercises)</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Reps / Time</th><th>Rest between rounds</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td>Hanging Leg Raises</td><td class="ex-sets">12 reps</td><td class="ex-rest" rowspan="4">60 sec</td><td>Lower abs and hip flexors</td></tr>
+                <tr><td>Ab Wheel Rollout</td><td class="ex-sets">10 reps</td><td>Full anterior chain stretch</td></tr>
+                <tr><td>Plank with Shoulder Tap</td><td class="ex-sets">20 taps</td><td>Anti-rotation stability</td></tr>
+                <tr><td>Cable Woodchop (each side)</td><td class="ex-sets">12 each</td><td>Rotational power + obliques</td></tr>
+              </tbody>
+            </table>
+            <div class="tip-box"><strong>Athlete vs bodybuilder push:</strong> OHP is prioritized over isolation. Athletes need shoulder strength for rotational power transfer. Lateral raises build proportion — not chasing the pump, chasing performance-based aesthetics.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card" id="card-d3">
+        <div class="day-header" onclick="toggleCard('d3')">
+          <div class="day-num">03</div>
+          <div class="day-info">
+            <div class="day-name">WEDNESDAY</div>
+            <div class="day-focus">Pull — Back, Biceps + Rotational Power</div>
+          </div>
+          <span class="day-badge badge-pull">Pull</span>
+          <span class="day-duration">75 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Warm-Up — 8 min</div>
+            <div class="cardio-block">
+              <div class="cardio-item">Cat-cow — 10 reps</div>
+              <div class="cardio-item">Thoracic rotations seated — 10 reps each side</div>
+              <div class="cardio-item">Scapular pull-ups (dead hang shrugs) — 2 × 10</div>
+              <div class="cardio-item">Band pull-aparts — 20 reps</div>
+              <div class="cardio-item">Light cable row warm-up — 2 × 15 (light weight)</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Strength Block</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Weighted Pull-ups</td><td class="ex-sets">4 × 6</td><td class="ex-rest">2 min</td><td>Full hang to chin over bar. Add 5–10kg belt if bodyweight too easy.</td></tr>
+                <tr><td>Barbell Bent-Over Row</td><td class="ex-sets">4 × 8</td><td class="ex-rest">90 sec</td><td>Overhand grip. Chest parallel to floor. Bar to lower chest.</td></tr>
+                <tr><td>Seated Cable Row (wide grip)</td><td class="ex-sets">3 × 10</td><td class="ex-rest">75 sec</td><td>Wide handle for mid-back. Full squeeze at end range.</td></tr>
+                <tr><td>Single-Arm Dumbbell Row</td><td class="ex-sets">3 × 12 each</td><td class="ex-rest">60 sec</td><td>Full stretch at bottom. Slight rotation for full lat engagement.</td></tr>
+                <tr><td>Incline DB Curls</td><td class="ex-sets">3 × 12</td><td class="ex-rest">60 sec</td><td>Full stretch at bottom. Slow 3-sec negative.</td></tr>
+                <tr><td>Hammer Curls</td><td class="ex-sets">3 × 12</td><td class="ex-rest">45 sec</td><td>Brachialis thickness. Critical for bat/racket swing power.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Rotational Power Block — Athletic Carry-Over</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Med Ball Rotational Wall Throw</td><td class="ex-sets">4 × 8 each</td><td class="ex-rest">60 sec</td><td>Pivot foot, hip rotation first, then arm. Cricket batting mechanics.</td></tr>
+                <tr><td>Cable Pallof Press</td><td class="ex-sets">3 × 12 each</td><td class="ex-rest">45 sec</td><td>Anti-rotation core. Resist the cable pulling you sideways.</td></tr>
+                <tr><td>Landmine Rotation</td><td class="ex-sets">3 × 10 each</td><td class="ex-rest">60 sec</td><td>Bar in corner. Sweeping arc. Hip-loaded rotation = athletic movement.</td></tr>
+              </tbody>
+            </table>
+            <div class="tip-box"><strong>Why rotational work matters:</strong> Virat Kohli's physique isn't just visual — it performs rotationally. These movements train the deep obliques, transverse abdominis, and the full kinetic chain from feet to fingertips.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card" id="card-d4">
+        <div class="day-header" onclick="toggleCard('d4')">
+          <div class="day-num">04</div>
+          <div class="day-info">
+            <div class="day-name">THURSDAY</div>
+            <div class="day-focus">Cardio + Mobility + Active Recovery</div>
+          </div>
+          <span class="day-badge badge-recovery">Recovery</span>
+          <span class="day-duration">50–60 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Option A — Aerobic Zone 2 Cardio (20–30 min)</div>
+            <div class="cardio-block">
+              <div class="cardio-item">Steady pace cycling, rowing machine, or brisk jog</div>
+              <div class="cardio-item">Heart rate: 130–145 bpm — you should still hold a conversation</div>
+              <div class="cardio-item">Builds your aerobic engine — elite athletes have exceptional cardio base</div>
+              <div class="cardio-item">Alternative: 30 min swimming (low impact, high burn)</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Option B — Sport / Outdoor (Preferred)</div>
+            <div class="cardio-block">
+              <div class="cardio-item">30 min cricket batting practice or nets</div>
+              <div class="cardio-item">30 min football / basketball / badminton</div>
+              <div class="cardio-item">Sport-specific cardio improves coordination and is more engaging</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Mobility & Flexibility — 25 min (after cardio)</div>
+            <table class="ex-table">
+              <thead><tr><th>Movement</th><th>Duration</th><th>Rest</th><th>Focus Area</th></tr></thead>
+              <tbody>
+                <tr><td>90/90 Hip Stretch</td><td class="ex-sets">90 sec/side</td><td class="ex-rest">—</td><td>Hip external rotation — tight in most lifters</td></tr>
+                <tr><td>Pigeon Pose</td><td class="ex-sets">90 sec/side</td><td class="ex-rest">—</td><td>Glute and piriformis release</td></tr>
+                <tr><td>Couch Stretch</td><td class="ex-sets">90 sec/side</td><td class="ex-rest">—</td><td>Quad and hip flexor release</td></tr>
+                <tr><td>Thoracic Spine Rotation</td><td class="ex-sets">10 reps each</td><td class="ex-rest">—</td><td>Upper back mobility for athletic posture</td></tr>
+                <tr><td>World's Greatest Stretch</td><td class="ex-sets">5 reps/side</td><td class="ex-rest">—</td><td>Full body — hip, thoracic, hamstring</td></tr>
+                <tr><td>Doorway Pec Stretch</td><td class="ex-sets">60 sec/side</td><td class="ex-rest">—</td><td>Counter the pushing work</td></tr>
+                <tr><td>Child's Pose to Cobra</td><td class="ex-sets">10 slow reps</td><td class="ex-rest">—</td><td>Spine decompression</td></tr>
+              </tbody>
+            </table>
+            <div class="warn-box"><strong>Do not skip Thursday.</strong> Recovery and mobility separate athletes from bodybuilders. Poor mobility = injury risk, poor posture, reduced power. Kohli integrates yoga and extensive mobility work year-round.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card" id="card-d5">
+        <div class="day-header" onclick="toggleCard('d5')">
+          <div class="day-num">05</div>
+          <div class="day-info">
+            <div class="day-name">FRIDAY</div>
+            <div class="day-focus">Full Body Athletic Strength + HIIT</div>
+          </div>
+          <span class="day-badge badge-full">Full Body</span>
+          <span class="day-duration">80 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Warm-Up — 10 min</div>
+            <div class="cardio-block">
+              <div class="cardio-item">3 min rowing or jump rope — moderate pace</div>
+              <div class="cardio-item">Inchworm walk-outs — 8 reps</div>
+              <div class="cardio-item">Lateral band walks — 15 reps each direction</div>
+              <div class="cardio-item">Scapular push-ups — 12 reps</div>
+              <div class="cardio-item">Goblet squat (light KB) — 10 reps</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Strength Block — Full Body Athletic Patterns</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Trap Bar Deadlift</td><td class="ex-sets">4 × 5</td><td class="ex-rest">2.5 min</td><td>More athletic than conventional. Drive through floor. Full extension at top.</td></tr>
+                <tr><td>Dumbbell Push Press</td><td class="ex-sets">4 × 8</td><td class="ex-rest">90 sec</td><td>Leg drive into overhead press. Explosive power transfer exercise.</td></tr>
+                <tr><td>Chin-ups (supinated grip)</td><td class="ex-sets">4 × max</td><td class="ex-rest">90 sec</td><td>If &gt;10 reps, add weight. Full dead hang each rep.</td></tr>
+                <tr><td>Rear-Foot Elevated DB Lunge</td><td class="ex-sets">3 × 10 each</td><td class="ex-rest">75 sec</td><td>Unilateral leg strength, balance and coordination.</td></tr>
+                <tr><td>Landmine Press (single arm)</td><td class="ex-sets">3 × 10 each</td><td class="ex-rest">60 sec</td><td>Horizontal push with rotational element. Shoulder health.</td></tr>
+                <tr><td>Suitcase Carry (KB or DB)</td><td class="ex-sets">3 × 30m each</td><td class="ex-rest">60 sec</td><td>Core anti-lateral flexion. Grip and oblique strength.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">HIIT Finisher — 15 min (4 rounds · 40s work / 20s rest)</div>
+            <div class="cardio-block">
+              <div class="cardio-item">Exercise 1: Kettlebell Swings — hip hinge explosive, not a squat</div>
+              <div class="cardio-item">Exercise 2: Battle Ropes or Dumbbell Thrusters — total body output</div>
+              <div class="cardio-item">Exercise 3: Burpee to Box Jump — max effort</div>
+              <div class="cardio-item">Exercise 4: Assault Bike or Rowing Machine — absolute max effort</div>
+              <div class="cardio-item">60 sec rest between full rounds</div>
+            </div>
+            <div class="tip-box"><strong>Full Body Friday:</strong> No muscle group is undertrained. HIIT burns maximum calories in minimum time and maintains cardiovascular fitness — the defining trait of an athlete's conditioning and metabolism.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day-card" id="card-d6">
+        <div class="day-header" onclick="toggleCard('d6')">
+          <div class="day-num">06</div>
+          <div class="day-info">
+            <div class="day-name">SATURDAY</div>
+            <div class="day-focus">Upper Body Hypertrophy + Core Power</div>
+          </div>
+          <span class="day-badge badge-hypertrophy">Hypertrophy</span>
+          <span class="day-duration">70 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Warm-Up — 8 min</div>
+            <div class="cardio-block">
+              <div class="cardio-item">Band shoulder warm-up — pull-aparts and dislocations (with band)</div>
+              <div class="cardio-item">Cable external rotation — 15 reps each side</div>
+              <div class="cardio-item">Scapular push-ups + light face pulls</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Hypertrophy Block (moderate weight, higher volume)</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Incline Barbell Press</td><td class="ex-sets">4 × 10</td><td class="ex-rest">75 sec</td><td>Upper chest emphasis — gives the athletic chest shelf look.</td></tr>
+                <tr><td>Cable Fly (low to high)</td><td class="ex-sets">3 × 15</td><td class="ex-rest">45 sec</td><td>Stretch at bottom. Hard squeeze at top. Mind-muscle focus.</td></tr>
+                <tr><td>Seated DB Shoulder Press</td><td class="ex-sets">4 × 12</td><td class="ex-rest">60 sec</td><td>Controlled. No back arch. Shoulder width = V-taper foundation.</td></tr>
+                <tr><td>Bent-Over Rear Delt Fly (DB)</td><td class="ex-sets">3 × 15</td><td class="ex-rest">45 sec</td><td>Posterior deltoid. Rounds out shoulder from all angles.</td></tr>
+                <tr><td>Lat Pulldown (wide grip)</td><td class="ex-sets">4 × 12</td><td class="ex-rest">60 sec</td><td>Pull to upper chest. Lats = V-taper. Most visible athletic muscle.</td></tr>
+                <tr><td>Cable Curl (alternating)</td><td class="ex-sets">3 × 12 each</td><td class="ex-rest">45 sec</td><td>Constant tension = effective hypertrophy stimulus.</td></tr>
+                <tr><td>Tricep Rope Pushdown</td><td class="ex-sets">3 × 15</td><td class="ex-rest">45 sec</td><td>Split rope at bottom. Full squeeze at end range.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Core Power Block — 3 rounds</div>
+            <table class="ex-table">
+              <thead><tr><th>Exercise</th><th>Reps</th><th>Rest</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Dragon Flag (or L-Sit)</td><td class="ex-sets">5–8 reps</td><td class="ex-rest">90 sec</td><td>Advanced core. Control the descent completely. No momentum.</td></tr>
+                <tr><td>Hanging Oblique Knee Raise</td><td class="ex-sets">12 each side</td><td class="ex-rest">60 sec</td><td>Rotate knees to each side. Oblique focus.</td></tr>
+                <tr><td>Dead Bug</td><td class="ex-sets">10 each side</td><td class="ex-rest">45 sec</td><td>Lower back flat throughout. Slow and deliberate movement.</td></tr>
+              </tbody>
+            </table>
+            <div class="tip-box"><strong>Saturday hypertrophy rationale:</strong> Week's fatigue means no strength PRs, but muscle-building volume at moderate load is highly productive and low-injury risk. This builds the visual physique on top of the athletic functional base.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 7 -->
+      <div class="day-card" id="card-d7">
+        <div class="day-header" onclick="toggleCard('d7')">
+          <div class="day-num">07</div>
+          <div class="day-info">
+            <div class="day-name">SUNDAY</div>
+            <div class="day-focus">Complete Rest or Yoga / Light Walk</div>
+          </div>
+          <span class="day-badge badge-rest">Rest</span>
+          <span class="day-duration">0–30 min</span>
+          <span class="day-chevron">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="workout-section">
+            <div class="ws-label">Option A — Full Rest</div>
+            <div class="cardio-block">
+              <div class="cardio-item">No exercise. Sleep 8–9 hours. Eat your full calories.</div>
+              <div class="cardio-item">This is when your body rebuilds tissue and gets stronger.</div>
+            </div>
+          </div>
+          <div class="workout-section">
+            <div class="ws-label">Option B — Active Recovery (Virat Kohli Style)</div>
+            <div class="cardio-block">
+              <div class="cardio-item">20–30 min yoga or sun salutations</div>
+              <div class="cardio-item">Light 20 min walk in morning sunlight (vitamin D + circadian rhythm)</div>
+              <div class="cardio-item">Foam rolling — thoracic spine, quads, calves, lats — 10 min</div>
+            </div>
+            <div class="warn-box"><strong>Non-negotiable:</strong> Never train hard on Sunday. Sleep is the #1 recovery and fat-loss tool. Kohli consistently sleeps 8+ hours and considers it part of training. Missing sleep will stall your transformation no matter how well you train.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== PHASES TAB ===== -->
+  <div id="tab-phases" class="tab-panel">
+    <div class="section-header fade-in">
+      <span class="section-label">02</span>
+      <h2 class="section-title">PHASE PLAN</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="phase-grid fade-in">
+
+      <div class="phase-card phase-1">
+        <div class="phase-num">01</div>
+        <div class="phase-title">FOUNDATION</div>
+        <div class="phase-weeks">Weeks 1–8 · Caloric Deficit · Cut 5–7kg</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-dot"></div>Drop from 20–25% to ~15% body fat</div>
+          <div class="phase-item"><div class="phase-dot"></div>Rep range: 8–12 (higher volume, moderate load)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Sprint intervals: 6–8 rounds × 30 sec</div>
+          <div class="phase-item"><div class="phase-dot"></div>Shorter rest (60–90 sec) to keep heart rate elevated</div>
+          <div class="phase-item"><div class="phase-dot"></div>Focus on form and consistency — not PRs</div>
+          <div class="phase-item"><div class="phase-dot"></div>Calories: 2400–2600 kcal/day (deficit of 300–400)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Protein: 176g/day minimum — non-negotiable</div>
+          <div class="phase-item"><div class="phase-dot"></div>Learn athletic patterns: box jumps, sprints, med ball throws</div>
+        </div>
+        <div class="phase-target">
+          <div class="phase-target-label">Target by Week 8</div>
+          <div class="phase-target-val">74–76 kg · ab outline visible</div>
+        </div>
+      </div>
+
+      <div class="phase-card phase-2">
+        <div class="phase-num">02</div>
+        <div class="phase-title">BUILD</div>
+        <div class="phase-weeks">Weeks 9–16 · Maintenance Calories · Recomposition</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-dot"></div>Build lean muscle while staying lean (body recomp)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Rep range: 4–6 reps (heavier, lower volume per set)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Sprint: 10 × 30 sec or 6 × 40m flat sprints</div>
+          <div class="phase-item"><div class="phase-dot"></div>Add hang power clean — learn weeks 9–10, load weeks 11+</div>
+          <div class="phase-item"><div class="phase-dot"></div>Full 2–3 min rest for compound lifts</div>
+          <div class="phase-item"><div class="phase-dot"></div>Progressive overload: +2.5kg every 2 weeks on main lifts</div>
+          <div class="phase-item"><div class="phase-dot"></div>Calories: 2700–2900 kcal/day (maintenance)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Carb cycle: higher carbs Mon/Fri/Sat, lower Thursday</div>
+        </div>
+        <div class="phase-target">
+          <div class="phase-target-label">Target by Week 16</div>
+          <div class="phase-target-val">72–75 kg · defined + stronger</div>
+        </div>
+      </div>
+
+      <div class="phase-card phase-3">
+        <div class="phase-num">03</div>
+        <div class="phase-title">PEAK</div>
+        <div class="phase-weeks">Weeks 17–24 · Slight Deficit · Final Shred</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-dot"></div>Shred final fat layer to reveal the athletic physique</div>
+          <div class="phase-item"><div class="phase-dot"></div>Rep range: 6–8 (maintain strength, moderate volume)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Sprint: 10–12 × 30 sec or 200m repeats</div>
+          <div class="phase-item"><div class="phase-dot"></div>Optional: 20 min fasted Zone 2 cardio Thursday morning</div>
+          <div class="phase-item"><div class="phase-dot"></div>Week 23 = deload (50% volume, same movements)</div>
+          <div class="phase-item"><div class="phase-dot"></div>Calories: 200–300 kcal deficit from maintenance</div>
+          <div class="phase-item"><div class="phase-dot"></div>Protein: 2.4–2.6g/kg (increase as calories drop)</div>
+          <div class="phase-item"><div class="phase-dot"></div>No eating after 8 PM. Water: minimum 3.5L/day</div>
+        </div>
+        <div class="phase-target">
+          <div class="phase-target-label">Target by Week 24</div>
+          <div class="phase-target-val">72–74 kg · 10–13% body fat</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== NUTRITION TAB ===== -->
+  <div id="tab-nutrition" class="tab-panel">
+    <div class="section-header fade-in">
+      <span class="section-label">03</span>
+      <h2 class="section-title">NUTRITION</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="nutr-grid fade-in">
+      <div class="nutr-card">
+        <div class="nutr-icon">🥩</div>
+        <div class="nutr-label">Protein</div>
+        <div class="nutr-val">176–190<span style="font-size:1rem; color:var(--text3);">g</span></div>
+        <div class="nutr-items">
+          <div class="nutr-item">Chicken breast, turkey</div>
+          <div class="nutr-item">Eggs (4–5 whole + whites)</div>
+          <div class="nutr-item">Paneer, Greek yoghurt</div>
+          <div class="nutr-item">Whey protein 1–2 scoops</div>
+          <div class="nutr-item">Dal, rajma, moong (vegetarian)</div>
+          <div class="nutr-item">Fish — salmon, tuna, rohu</div>
+        </div>
+      </div>
+      <div class="nutr-card">
+        <div class="nutr-icon">🍚</div>
+        <div class="nutr-label">Carbohydrates</div>
+        <div class="nutr-val">250–280<span style="font-size:1rem; color:var(--text3);">g</span></div>
+        <div class="nutr-items">
+          <div class="nutr-item">Rice — white/brown (post-workout)</div>
+          <div class="nutr-item">Oats (morning)</div>
+          <div class="nutr-item">Sweet potato</div>
+          <div class="nutr-item">Chapati (2–3 max per day)</div>
+          <div class="nutr-item">Fruits: banana, apple, papaya</div>
+          <div class="nutr-item">Whole grain bread (pre-workout)</div>
+        </div>
+      </div>
+      <div class="nutr-card">
+        <div class="nutr-icon">🥑</div>
+        <div class="nutr-label">Fats</div>
+        <div class="nutr-val">60–70<span style="font-size:1rem; color:var(--text3);">g</span></div>
+        <div class="nutr-items">
+          <div class="nutr-item">Almonds, walnuts (1 handful)</div>
+          <div class="nutr-item">Ghee — 1 tsp for cooking</div>
+          <div class="nutr-item">Egg yolks (don't skip)</div>
+          <div class="nutr-item">Olive oil for salads</div>
+          <div class="nutr-item">Avocado (if available)</div>
+        </div>
+      </div>
+      <div class="nutr-card">
+        <div class="nutr-icon">💧</div>
+        <div class="nutr-label">Hydration</div>
+        <div class="nutr-val">3.5<span style="font-size:1rem; color:var(--text3);">L/day</span></div>
+        <div class="nutr-items">
+          <div class="nutr-item">Water — minimum 3.5 litres</div>
+          <div class="nutr-item">Electrolytes post-workout</div>
+          <div class="nutr-item">Black coffee (pre-workout, optional)</div>
+          <div class="nutr-item">Coconut water (after cardio)</div>
+          <div class="nutr-item">No soft drinks, ever</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header fade-in" style="margin-top:2rem;">
+      <span class="section-label" style="font-size:12px; color:var(--text3);">Sample Meal Plan</span>
+      <h3 style="font-family:var(--font-display); font-size:1.5rem; color:var(--text); letter-spacing:0.04em;">TRAINING DAY</h3>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="meal-timeline fade-in">
+      <div class="meal-row">
+        <div class="meal-time">7:00 AM</div>
+        <div class="meal-desc"><strong>Breakfast:</strong> 5-egg omelette (3 whole + 2 whites) + 80g oats with banana + handful of almonds</div>
+        <div class="meal-kcal">~630 kcal</div>
+      </div>
+      <div class="meal-row">
+        <div class="meal-time">10:30 AM</div>
+        <div class="meal-desc"><strong>Pre-Workout:</strong> 1 banana + 1 scoop whey in water + black coffee (optional)</div>
+        <div class="meal-kcal">~250 kcal</div>
+      </div>
+      <div class="meal-row">
+        <div class="meal-time">11:30 AM</div>
+        <div class="meal-desc" style="color:var(--accent); font-weight:500;">TRAIN</div>
+        <div class="meal-kcal">—</div>
+      </div>
+      <div class="meal-row">
+        <div class="meal-time">1:30 PM</div>
+        <div class="meal-desc"><strong>Post-Workout:</strong> 150g chicken or paneer + 1.5 cups cooked rice + salad + 1 scoop whey</div>
+        <div class="meal-kcal">~730 kcal</div>
+      </div>
+      <div class="meal-row">
+        <div class="meal-time">4:30 PM</div>
+        <div class="meal-desc"><strong>Snack:</strong> Greek yoghurt 200g + berries or papaya + 10 walnuts</div>
+        <div class="meal-kcal">~300 kcal</div>
+      </div>
+      <div class="meal-row">
+        <div class="meal-time">7:30 PM</div>
+        <div class="meal-desc"><strong>Dinner:</strong> 150g fish or chicken + 2 chapati or 1 cup rice + sabzi (cooked vegetables) + dal</div>
+        <div class="meal-kcal">~575 kcal</div>
+      </div>
+      <div class="meal-row">
+        <div class="meal-time">9:30 PM</div>
+        <div class="meal-desc"><strong>Optional:</strong> 200ml warm milk or 100g cottage cheese (slow-digesting casein protein)</div>
+        <div class="meal-kcal">~170 kcal</div>
+      </div>
+    </div>
+
+    <div class="warn-box fade-in" style="margin-bottom:2rem;">
+      <strong>Eliminate immediately and permanently:</strong> Fried food, chips, namkeen, pakora · Sugar in chai/coffee · Alcohol (kills testosterone, disrupts sleep, stores fat) · Biscuits, white bread, bakery items · Soft drinks and packaged juices · Late-night heavy meals after 8 PM
+    </div>
+
+    <div class="tip-box fade-in">
+      <strong>Virat Kohli's actual diet approach:</strong> Mostly gluten-free and low-dairy diet focused heavily on lean protein and vegetables. Strict meal timing year-round. Complete alcohol abstainer. Zero junk food — treated as an identity, not a sacrifice. He has said nutrition is 70% of his transformation.
+    </div>
+  </div>
+
+  <!-- ===== SUPPLEMENTS TAB ===== -->
+  <div id="tab-supplements" class="tab-panel">
+    <div class="section-header fade-in">
+      <span class="section-label">04</span>
+      <h2 class="section-title">SUPPLEMENTS</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="supp-grid fade-in">
+      <div class="supp-card">
+        <div class="supp-name">Creatine Monohydrate</div>
+        <div class="supp-dose">5g daily</div>
+        <div class="supp-timing">Any time — consistency over timing</div>
+        <div class="supp-why">Most proven supplement. Strength, power, and lean mass. Non-negotiable for this plan.</div>
+      </div>
+      <div class="supp-card">
+        <div class="supp-name">Whey Protein</div>
+        <div class="supp-dose">1–2 scoops daily</div>
+        <div class="supp-timing">Post-workout or whenever needed</div>
+        <div class="supp-why">Convenient way to hit 176g daily protein target. Use only if food protein falls short.</div>
+      </div>
+      <div class="supp-card">
+        <div class="supp-name">Vitamin D3 + K2</div>
+        <div class="supp-dose">2000–4000 IU D3</div>
+        <div class="supp-timing">Morning with food</div>
+        <div class="supp-why">Testosterone, immune function, bone health. 80%+ of Indians are deficient — this is priority.</div>
+      </div>
+      <div class="supp-card">
+        <div class="supp-name">Omega-3 Fish Oil</div>
+        <div class="supp-dose">2–3g EPA+DHA</div>
+        <div class="supp-timing">With meals</div>
+        <div class="supp-why">Anti-inflammatory, joint health, supports fat oxidation and recovery between sessions.</div>
+      </div>
+      <div class="supp-card">
+        <div class="supp-name">Magnesium Glycinate</div>
+        <div class="supp-dose">200–400mg</div>
+        <div class="supp-timing">Before bed</div>
+        <div class="supp-why">Dramatically improves sleep quality, muscle recovery, and reduces cortisol. Game-changer.</div>
+      </div>
+      <div class="supp-card">
+        <div class="supp-name">Zinc</div>
+        <div class="supp-dose">15–30mg</div>
+        <div class="supp-timing">With dinner</div>
+        <div class="supp-why">Testosterone support and immune function. Take with food to avoid nausea.</div>
+      </div>
+      <div class="supp-card">
+        <div class="supp-name">Electrolytes</div>
+        <div class="supp-dose">As needed</div>
+        <div class="supp-timing">During/after intense sessions</div>
+        <div class="supp-why">Replenish sodium, potassium, magnesium lost in sweat. Especially in Indian heat.</div>
+      </div>
+      <div class="supp-card" style="border-color:rgba(232,84,71,0.15);">
+        <div class="supp-name" style="color:var(--red);">What to Avoid</div>
+        <div class="supp-dose" style="color:var(--text3);">Ineffective or risky</div>
+        <div class="supp-timing"></div>
+        <div class="supp-why">Fat burners, stimulant pre-workouts, "testosterone boosters" — waste of money at best, harmful at worst. One cup of black coffee is the only stimulant you need.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LIFESTYLE TAB ===== -->
+  <div id="tab-lifestyle" class="tab-panel">
+    <div class="section-header fade-in">
+      <span class="section-label">05</span>
+      <h2 class="section-title">LIFESTYLE & RECOVERY</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="lifestyle-grid fade-in">
+      <div class="lifestyle-card">
+        <div class="ls-title">Sleep Protocol</div>
+        <div class="ls-items">
+          <div class="ls-item"><div class="ls-bullet"></div>8–9 hours per night. Non-negotiable for fat loss and muscle gain.</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Fixed schedule: 10:30 PM – 6:30 AM or 11 PM – 7 AM</div>
+          <div class="ls-item"><div class="ls-bullet"></div>No phone/screen 30 min before bed — blue light suppresses melatonin</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Room dark and cool — 18–20°C is optimal for deep sleep</div>
+          <div class="ls-item"><div class="ls-bullet"></div>No heavy meals within 2 hours of sleeping</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Magnesium Glycinate 30 min before bed for sleep quality</div>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="ls-title">Daily Foam Rolling</div>
+        <div class="ls-items">
+          <div class="ls-item"><div class="ls-bullet"></div>5–10 min daily, ideally before training or before sleep</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Quadriceps — 60 sec each side</div>
+          <div class="ls-item"><div class="ls-bullet"></div>IT Band (outer thigh) — 60 sec each side</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Upper back / thoracic spine — 60–90 sec</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Calves — 45 sec each leg</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Lats — 45 sec each side</div>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="ls-title">Deload Protocol</div>
+        <div class="ls-items">
+          <div class="ls-item"><div class="ls-bullet"></div>Every 8 weeks — a mandatory deload week</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Reduce sets by 40–50% of normal volume</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Keep the same movements and rep ranges</div>
+          <div class="ls-item"><div class="ls-bullet"></div>No new maxes — let your body absorb the training</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Feeling weaker during deload is completely normal</div>
+          <div class="ls-item"><div class="ls-bullet"></div>You will always come back stronger after deload</div>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="ls-title">Weekly Tracking</div>
+        <div class="ls-items">
+          <div class="ls-item"><div class="ls-bullet"></div>Body weight every Sunday morning — fasted, after bathroom</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Waist circumference at navel level</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Progress photos: front, side, back — same lighting always</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Log lifts weekly: squat, deadlift, pull-up, OHP</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Rate energy, sleep, recovery on 1–10 scale</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Never change multiple variables at once — one at a time</div>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="ls-title">Handling Plateaus</div>
+        <div class="ls-items">
+          <div class="ls-item"><div class="ls-bullet"></div>Weight stall 2+ weeks → reduce calories 100–150 kcal/day</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Or add 1 extra cardio session per week</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Strength stall → check sleep quality, check calorie intake</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Overtrained feeling → take 2 rest days, not just 1</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Don't panic at the scale — photos and measurements matter more</div>
+        </div>
+      </div>
+      <div class="lifestyle-card">
+        <div class="ls-title">Stress & Cortisol</div>
+        <div class="ls-items">
+          <div class="ls-item"><div class="ls-bullet"></div>High chronic stress elevates cortisol — stores fat around the waist</div>
+          <div class="ls-item"><div class="ls-bullet"></div>10 min meditation or breathing daily (Kohli practices this)</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Walk in sunlight every morning — lowers cortisol naturally</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Limit caffeine after 2 PM to protect sleep quality</div>
+          <div class="ls-item"><div class="ls-bullet"></div>Social rest: spend time with people who energize, not drain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MINDSET TAB ===== -->
+  <div id="tab-principles" class="tab-panel">
+    <div class="section-header fade-in">
+      <span class="section-label">06</span>
+      <h2 class="section-title">MINDSET</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="principles fade-in">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <div class="principle-title">Discipline over motivation</div>
+        <div class="principle-desc">Motivation is an emotion — it fades. Systems and daily habits don't. Build the routine until it's identity.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <div class="principle-title">Identity, not sacrifice</div>
+        <div class="principle-desc">Don't say "I can't eat junk". Say "I don't eat junk. I'm an athlete." The language of identity holds.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <div class="principle-title">Process over appearance</div>
+        <div class="principle-desc">Train to perform — to run faster, lift heavier, move better. The physique follows performance. Always.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <div class="principle-title">Consistency beats perfection</div>
+        <div class="principle-desc">6 months of 80% effort destroys 2 months of 100% effort followed by quitting. Show up every week.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">05</div>
+        <div class="principle-title">Sleep is sacred</div>
+        <div class="principle-desc">Kohli calls sleep his secret weapon. 8+ hours is not lazy — it is how champions are built and fat is lost.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">06</div>
+        <div class="principle-title">No free days from being an athlete</div>
+        <div class="principle-desc">Every workout, every meal, every sleep window counts. The compound effect of small daily choices is everything.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">07</div>
+        <div class="principle-title">Ego is your enemy in the gym</div>
+        <div class="principle-desc">Lifting too heavy with bad form builds injuries, not muscle. Check the ego, master the movement, then load the bar. Athletes train smart first.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">08</div>
+        <div class="principle-title">Comparison is a trap</div>
+        <div class="principle-desc">Your only competition is who you were last week. Comparing your Week 3 to someone's Year 3 is how people quit. Track your own progress religiously.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">09</div>
+        <div class="principle-title">Discomfort is the curriculum</div>
+        <div class="principle-desc">The reps that hurt at the end of a set, the sprint when your lungs burn, the meal-prepped food when everyone else orders out — that's where the transformation lives.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">10</div>
+        <div class="principle-title">Recovery is training</div>
+        <div class="principle-desc">You don't grow in the gym — you grow when you rest. Skipping rest days, foam rolling, and sleep is skipping training. Treat recovery with the same seriousness as lifting.</div>
+      </div>
+    </div>
+
+    <div class="tip-box fade-in">
+      <strong>Final note:</strong> At 80kg with 20–25% body fat, you have substantial muscle built over 2 years underneath. The goal is not to build from zero — it's to <em>reveal and refine</em> what's already there, while adding athletic capacity and power on top. Follow this plan for 24 weeks without skipping more than 2 sessions per month and your physique will transform completely.
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-logo">HYBRID <span>ATHLETE</span></div>
+  <div class="footer-sub">24-Week Transformation Plan · Inspired by Virat Kohli's Training Philosophy</div>
+</footer>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    const order = ['schedule','phases','nutrition','supplements','lifestyle','principles'];
+    const idx = order.indexOf(name);
+    document.querySelectorAll('.tab')[idx].classList.add('active');
+    window.scrollTo({ top: document.querySelector('.tabs-wrapper').offsetTop - 10, behavior: 'smooth' });
+  }
+
+  function toggleCard(id) {
+    const card = document.getElementById('card-' + id);
+    card.classList.toggle('open');
+  }
+
+  // Intersection Observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
