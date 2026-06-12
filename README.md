@@ -1,1 +1,1 @@
-WorkOut plan VK edition
+Workout plan VK edition
