@@ -2,4 +2,4 @@ VK style hybrid workout for gym
 
 Athlete Workout
 
-being Hybrid athlete is better than a body builder
+Being a Hybrid Athlete is better than a Bodybuilder
